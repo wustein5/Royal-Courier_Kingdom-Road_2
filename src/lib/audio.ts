@@ -199,6 +199,13 @@ class AudioService {
   playShopOpen() { [523,659,784,659,784,1047].forEach((f,i) => this.playTone(f, 'triangle', 0.15, 0.12, i * 0.1)); }
   playBossWarning() { this.playTone(87, 'sawtooth', 0.6, 0.28); this.playTone(65, 'sawtooth', 0.6, 0.18, 0.1); this.playTone(110, 'square', 0.4, 0.12, 0.3); }
   playCarriageBreak() { for(let i=0;i<8;i++) this.playTone(220-i*20,'sawtooth',0.15,0.2,i*0.06); this.playTone(80,'square',0.4,0.3,0.1); }
+  playWarHorn() { this.playTone(87, 'sawtooth', 0.6, 0.28); this.playTone(65, 'sawtooth', 0.5, 0.18, 0.15); this.playTone(110, 'square', 0.3, 0.12, 0.35); }
+  playFanfare() { [523,659,784,1047,784,1047].forEach((f,i) => this.playTone(f, 'triangle', 0.2, 0.18, i * 0.12)); }
+  playSad() { [392,349,330,294].forEach((f,i) => this.playTone(f, 'sine', 0.3, 0.12, i * 0.2)); }
+  playOminous() { this.playTone(80, 'sawtooth', 0.8, 0.15); this.playTone(60, 'sawtooth', 0.8, 0.1, 0.1); this.playTone(90, 'square', 0.6, 0.08, 0.3); }
+  playCelebration() { [523,659,784,880,1047,880,784,659,784,1047].forEach((f,i) => this.playTone(f, 'triangle', 0.15, 0.15, i * 0.08)); }
+  startMenuMusic() { this.startMusic(false); }
+  stopMenuMusic() { this.stopMusic(); }
 }
 
 export const audioService = new AudioService();
